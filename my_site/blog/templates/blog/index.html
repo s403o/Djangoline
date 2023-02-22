@@ -5,5 +5,46 @@
 {% endblock  %}
 
 {% block body %}
-  <h1>Welcome to my blog</h1>
+  <header id="main-navigation">
+    <h1><a href=''>Djangoline</a></h1>
+    <nav>
+      <a href=''>All Posts</a>
+    </nav>
+  </header>
+  
+  <section id="welcome">
+    <header>
+      <img src='' alt='s403o - Author'>
+      <h2>s403o's Blog</h2>
+    </header>
+    <p>paragraph for testing</p>
+  </section>
+
+  <section id="latest-posts">
+    <h2>My Latest Posts</h2>
+    <ul>
+      <li>
+        <article class="post">
+          <a href=''>
+            <img src='' alt='DevOps'>
+            <div class="post__content"> {% comment %} BEM (block element modifier) {% endcomment %}
+              <h3>DevOps</h3>
+              <p>DevOps is the combination of cultural philosophies, practices, and tools that increases an organization's ability to deliver applications and services at high velocity</p>
+            </div>
+          </a>
+        </article>
+      </li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>What I Do</h2>
+    <p>
+      text text text text text text text text text text
+    </p>
+    <p>
+      text text text text text text text text text text
+    </p>
+
+  </section>
 {% endblock  %}
