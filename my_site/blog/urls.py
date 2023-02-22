@@ -1,7 +1,9 @@
 from django.urls import path
+from . import views
+
 
 urlpatterns = [
-  path(""),
-  path("posts"),
-  path("posts/<slug:slug>") # /posts/post_title (slug transformer)
+  path("", views.starting_page, name="starting_page"),
+  path("posts", views.posts, name="posts"),
+  path("posts/<slug:slug>", views.post_details, name="post_details"), # /posts/post_title (slug transformer)
 ]
