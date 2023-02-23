@@ -8,5 +8,5 @@ def starting_page(request):
 def posts(request):
   return render(request, "blog/all-posts.html")
 
-def post_details(request, slug):
+def post_details(request, slug): # slug (dynamic segment)
   return render(request, "blog/post-details.html")
