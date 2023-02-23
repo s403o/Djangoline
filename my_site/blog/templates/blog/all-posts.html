@@ -6,18 +6,17 @@
 {% endblock  %}
 
 {% block css %}
-  <link rel='stylesheet' href='{% static 'blog/' %}'>
+  <link rel='stylesheet' href='{% static 'blog/all-posts.css' %}'>
+  <link rel='stylesheet' href='{% static 'blog/post.css' %}'>
 {% endblock %}
 
 {% block body %}
   <section id="all-posts">
     <h2>My Collected Posts</h2>
     <ul>
-      <li>
-        <article class="posts">
-
-        </article>
-      </li>
+      {% include 'blog/includes/post.html' %}
+      {% include 'blog/includes/post.html' %}
+      {% include 'blog/includes/post.html' %}
     </ul>
   </section>
 {% endblock %}
