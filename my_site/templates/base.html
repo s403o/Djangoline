@@ -13,9 +13,9 @@
   
 <body>
   <header id="main-navigation">
-    <a href=''><img src='{% static 'blog/images/logo-.png' %}' alt='Djangoline logo'></a>
+    <a href='{% url 'starting_page' %}'><img src='{% static 'blog/images/logo-.png' %}' alt='Djangoline logo'></a>
     <nav>
-      <a href=''>All Posts</a>
+      <a href='{% url 'posts' %}'>All Posts</a>
     </nav>
   </header>
   {% block body %} {% endblock  %}
