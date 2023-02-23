@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} 
   My Blog
 {% endblock  %}
 
+{% block css %}
+  <link rel='stylesheet' href='{% static 'blog/index.css' %}'>
+{% endblock  %}
+
 {% block body %}
-  <header id="main-navigation">
-    <h1><a href=''>Djangoline</a></h1>
-    <nav>
-      <a href=''>All Posts</a>
-    </nav>
-  </header>
-  
+
   <section id="welcome">
     <header>
-      <img src='' alt='s403o - Author'>
+      <img src='{% static '/blog/images/me.png' %}' alt='s403o - Author'>
       <h2>s403o's Blog</h2>
     </header>
     <p>paragraph for testing</p>
@@ -23,17 +22,7 @@
   <section id="latest-posts">
     <h2>My Latest Posts</h2>
     <ul>
-      <li>
-        <article class="post">
-          <a href=''>
-            <img src='' alt='DevOps'>
-            <div class="post__content"> {% comment %} BEM (block element modifier) {% endcomment %}
-              <h3>DevOps</h3>
-              <p>DevOps is the combination of cultural philosophies, practices, and tools that increases an organization's ability to deliver applications and services at high velocity</p>
-            </div>
-          </a>
-        </article>
-      </li>
+      {% include 'blog/includes/post.html' %}
     </ul>
   </section>
 
