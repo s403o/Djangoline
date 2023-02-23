@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+  DevOps Culture
+{% endblock  %}
+
+{% block css %}
+  <link rel='stylesheet' href='{% static 'blog/post-details.css' %}'>
+{% endblock  %}
+
+{% block body %}
+  <section id="summary">
+    <h2>DevOps</h2>
+    <article>
+      <img src='{% static 'blog/images/DevOps-lifecycle.png' %}' alt='Post - Title'>
+      <address>By s403o</address>
+      <div>
+        last updated on <time>Feb 24th</time>
+      </div>
+    </article>
+  </section>
+
+  <main>
+    <p>DevOps is the combination of cultural philosophies, practices, and tools that increases an organization's ability to deliver applications and services at high velocity</p>
+  </main>
+{% endblock  %}
