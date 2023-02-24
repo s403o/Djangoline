@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Error 404 Not Found!
+{% endblock  %}
+
+{% block css %}
+  <link rel='stylesheet' href='{% static '404.css' %}'>
+{% endblock  %}
+
+{% block body %}
+<div class="bg">
+  <img src='{% static 'blog/images/404.png' %}' alt='Error 404 Page Not Found'>
+</div>
+{% endblock  %}
