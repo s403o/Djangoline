@@ -2,11 +2,11 @@
 
 <li>
   <article class="post">
-    <a href='{% url 'post_details' 'DevOps-Culture' %}'>
-      <img src='{% static '/blog/images/DevOps-lifecycle.png' %}' alt='DevOps'>
+    <a href='{% url 'post_details' post.slug %}'>
+      <img src='{% static '/blog/images/'|add:post.image %}' alt='{{ post.title }}'>
       <div class="post__content"> {% comment %} BEM (block element modifier) {% endcomment %}
-        <h3>DevOps</h3>
-        <p>DevOps is the combination of cultural philosophies, practices, and tools that increases an organization's ability to deliver applications and services at high velocity</p>
+        <h3>{{ post.title }}</h3>  {# to access the dic keys in template #}
+        <p>{{ post.excerpt }}</p>
       </div>
     </a>
   </article>
