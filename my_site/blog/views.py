@@ -56,8 +56,13 @@ def starting_page(request):
 
 
 def posts(request):
-  return render(request, "blog/all-posts.html")
+  return render(request, "blog/all-posts.html", {
+    "all_posts": all_posts
+  })
 
 
 def post_details(request, slug):  # slug (dynamic segment)
-  return render(request, "blog/post-details.html")
+  post_id = next(post for post in all_posts if post['slug'] == slug)
+  return render(request, "blog/post-details.html", {
+    "post": post_id
+  })
