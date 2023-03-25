@@ -2,6 +2,8 @@ from django.db import models
 from django.core.validators import MinValueValidator
 # Create your models here.
 
+class Tag(models.Model):
+    captions = models.CharField(max_length=20)
 class Author(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
@@ -14,4 +16,5 @@ class Post(models.Model):
     slug = models.SlugField(unique=True) # db_index=True auto set
     excerpt = models.CharField(max_length=200)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, related_name="posts")
+    tags = models.ManyToManyField(Tag)
     
