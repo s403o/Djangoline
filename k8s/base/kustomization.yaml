@@ -1,0 +1,27 @@
+resources:
+  - namespace.yaml
+  - deployments.yaml
+  - service.yaml
+  - configmap.yaml
+  - opentelemetry-collector.yaml
+
+patches:
+  - target:
+      version: v1
+      kind: Deployment
+    patch: |-
+      - op: add
+        path: /spec/template/metadata/annotations
+        value:
+          sidecar.opentelemetry.io/inject: "djangoline"
+      - op: add
+        path: /spec/revisionHistoryLimit
+        value: 5
+      - op: add
+        path: /spec/template/spec/terminationGracePeriodSeconds
+        value: 3600
+      - op: add
+        path: /spec/template/spec/containers/0/envFrom
+        value:
+          - configMapRef:
+              name: djangoline-config

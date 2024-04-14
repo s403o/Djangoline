@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: djangoline-service
+  namespace: djangoline
+  labels:
+    app.kubernetes.io/name: djangoline
+spec:
+  selector:
+    app.kubernetes.io/name: djangoline
+  ports:
+    - protocol: TCP
+      name: djangoline-port
+      port: 8000
+      targetPort: 8000
+  type: NodePort

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: djangoline-config
+  namespace: djangoline
+data:
+  DJANGO_SETTINGS_MODULE: my_site.settings
+  DEBUG: "True"
+  DJANGO_DEBUG: "True"
+  DJANGO_SECRET_KEY: "12345"
+  DJANGO_CONFIGURATION: "Local"
+  OTEL_SERVICE_NAME: "djangoline"
+  OTEL_LOGS_EXPORTER: "none"
+  OTEL_METRICS_EXPORTER: "none"
+  # OTEL_EXPORTER_OTLP_ENDPOINT: "otel-collector-opentelemetry-collector:4317"

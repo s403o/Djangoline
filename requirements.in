@@ -1,0 +1,8 @@
+Django
+django-admin
+structlog
+django-structlog
+opentelemetry-distro
+opentelemetry-exporter-otlp
+opentelemetry-instrumentation-django
+opentelemetry.instrumentation.urllib3

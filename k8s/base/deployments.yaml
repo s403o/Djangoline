@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: djangoline
+  namespace: djangoline
+  labels:
+    app.kubernetes.io/name: djangoline
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: djangoline
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: djangoline
+    spec:
+      containers:
+        - name: djangoline
+          image: s403o/djangoline
+          imagePullPolicy: Always
+          command: ["python3"]
+          args:
+            - "manage.py"
+            - "runserver"
+            - "0.0.0.0:8000"
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  ["bash", "-c", "'kill -s TERM 1&; sleep 1 && kill -s TERM 1'"]
+          ports:
+            - containerPort: 8000

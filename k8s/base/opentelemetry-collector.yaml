@@ -1,0 +1,35 @@
+apiVersion: opentelemetry.io/v1alpha1
+kind: OpenTelemetryCollector
+metadata:
+  name: djangoline
+  namespace: djangoline
+spec:
+  mode: sidecar
+  config: |
+    receivers:
+      otlp:
+        protocols:
+          grpc: 
+            endpoint: 0.0.0.0:4317
+          http:
+            endpoint: 0.0.0.0:55681
+
+    processors:
+      batch:
+
+    exporters:
+      otlp:
+        endpoint: otel-collector-opentelemetry-collector:4317
+        tls:
+          insecure: true
+
+    service:
+      telemetry:
+        logs:
+          encoding: json
+      extensions: []
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [otlp]

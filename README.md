@@ -1,12 +1,16 @@
 # TODO List
 
-- [] Logging & Tracing (Opentelemetry)
+- [x] Logging & Tracing (Opentelemetry)
 - [] Unit Testing
 - [] Migrate DB to Postgres
 - [] Finalize the app
-- [] PIP-Tools & Makefile
-- [] Dockerfile & push image
+- [x] PIP-Tools & Makefile
+- [x] Dockerfile & push image
 - [] K8s (app & `ArgoCD` & `Graphna` `Kustomize`, `Helm`)
 - [] CI\CD (following Sec practices)
 - [] `Tilt`
 - [] Follow best practices as possible
+- [] Add more features
+- [] Add more tests
+- [] Add documentation
+- [] create namespace for each purpose (ex: monitoring, app, etc.)

@@ -1,0 +1,7 @@
+README.md
+Dockerfile
+k8s
+Makefile
+__pycache__
+.gitignore
+.pre-commit-config.yaml
