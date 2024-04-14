@@ -1,7 +1,9 @@
 # OpenTelemetry Helm Chart Installation
 ```bash
+kubectl create namespace monitoring
 helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
-helm install otel-collector open-telemetry/opentelemetry-collector --set mode=deployment --set resources.requests.cpu=100m --set resources.requests.memory=100Mi --set resources.limits.cpu=200m --set resources.limits.memory=200Mi
+helm install otel-collector open-telemetry/opentelemetry-collector --set mode=deployment --set resources.requests.cpu=100m --set resources.requests.memory=100Mi --set resources.limits.cpu=200m --set resources.limits.memory=200Mi -n monitoring
+helm install otel-operator open-telemetry/opentelemetry-operator -n monitoring
 ```
 # Create the namespace for cert-manager
 ```bash 
